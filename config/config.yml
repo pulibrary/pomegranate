@@ -1,5 +1,5 @@
 defaults: &defaults
-  all_collection_manifest_url: "https://hydra-dev.princeton.edu/collections/manifest"
+  all_collection_manifest_url: "https://hydra-dev.princeton.edu/iiif/collections"
 
 development:
   <<: *defaults

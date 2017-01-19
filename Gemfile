@@ -63,6 +63,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'ruby-prof'
 end
 
 gem 'rubocop', '~> 0.41', '>= 0.41.2', require: false

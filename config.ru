@@ -2,6 +2,6 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
-if Rails.env.production?
-  use Rack::RubyProf, :path => '/tmp/profile'
-end
+# if Rails.env.production?
+#   use Rack::RubyProf, :path => '/tmp/profile'
+# end

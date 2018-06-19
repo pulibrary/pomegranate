@@ -10,12 +10,14 @@ describe IIIFResource do
 
       solr_doc = nil
       resource.document_builder.to_solr { |x| solr_doc = x }
+
       expect(solr_doc["full_title_tesim"]).to eq ['Christopher and his kind, 1929-1939']
       expect(solr_doc["readonly_created_tesim"]).to eq ["1976-01-01T00:00:00Z"]
       expect(solr_doc["readonly_range-label_tesim"]).to eq ["Chapter 1", "Chapter 2"]
       expect(Spotlight::CustomField.last.field_type).to eq 'vocab'
       expect(solr_doc["readonly_created_ssim"]).to eq ["1976-01-01T00:00:00Z"]
       expect(solr_doc["readonly_description_ssim"]).to eq ["First", "Second"]
+      expect(solr_doc["readonly_location_ssim"]).to eq ["F PR6017.S5 Z498"]
     end
     it 'indexes collections' do
       exhibit = Spotlight::Exhibit.create title: 'Exhibit A'

@@ -78,11 +78,11 @@ end
 
 
 namespace :deploy do
-  desc 'Run rake npm install'
-  task :npm_install do
+  desc 'Run yarn install'
+  task :yarn_install do
     on roles(:web) do
       within release_path do
-        execute("cd #{release_path} && npm install")
+        execute("cd #{release_path} && yarn install")
       end
     end
   end
@@ -92,4 +92,4 @@ after 'deploy:published', 'sneakers:restart'
 after 'deploy:starting', 'sidekiq:quiet'
 after 'deploy:reverted', 'sidekiq:restart'
 after 'deploy:published', 'sidekiq:restart'
-before "deploy:assets:precompile", "deploy:npm_install"
+before "deploy:assets:precompile", "deploy:yarn_install"
